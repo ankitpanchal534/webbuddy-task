@@ -5,7 +5,7 @@ export const LovedBySection = () => {
         <h2 className="text-[16px] text-[#171618] font-medium">
           Loved by product folks at
         </h2>
-        <div className="flex justify-center space-x-8 mt-8">
+        <div className="flex justify-center space-x-8 mt-8 flex-wrap">
           <span>Capsule</span>
           <span>Loyers</span>
           <span>Sisyphus</span>
