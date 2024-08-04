@@ -70,6 +70,7 @@ export const features = [
     top: 440,
     left: 1150,
     shadowColor: "voilet",
+    anchor: "bottom",
   },
   {
     id: 6,
@@ -78,6 +79,7 @@ export const features = [
     top: 100,
     left: 1150,
     shadowColor: "voilet",
+    anchor: "bottom",
   },
 
   // {
@@ -96,5 +98,23 @@ export const features = [
     top: 300,
     left: 1020,
     shadowColor: "voilet",
+    anchor: "bottom",
+  },
+  {
+    id: 9,
+    title: "AI",
+    icon: "Group 14.svg",
+    top: 580,
+    left: 500,
+    shadowColor: "voilet",
   },
 ];
+
+// export const centerItem = {
+//   id: 9,
+//   title: "AI",
+//   icon: "Group 14.svg",
+//   top: 0,
+//   left: 0,
+//   shadowColor: "voilet",
+// };
