@@ -5,6 +5,7 @@ export const features = [
     icon: "Group 11.svg",
     top: 50,
     left: 50,
+    shadowColor: "voilet",
   },
   {
     id: 17,
@@ -12,6 +13,7 @@ export const features = [
     icon: "Group 17.svg",
     top: 150,
     left: 220,
+    shadowColor: "voilet",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ export const features = [
     icon: "Group 15.svg",
     top: 250,
     left: 50,
+    shadowColor: "voilet",
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ export const features = [
     icon: "Group 5.svg",
     top: 350,
     left: 220,
+    shadowColor: "voilet",
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ export const features = [
     icon: "Group 8.svg",
     top: 450,
     left: 50,
+    shadowColor: "voilet",
   },
   {
     id: 10,
@@ -40,6 +45,7 @@ export const features = [
     icon: "Group 7.svg",
     top: 600,
     left: 300,
+    shadowColor: "voilet",
   },
   {
     id: 5,
@@ -47,6 +53,7 @@ export const features = [
     icon: "Group 10.svg",
     top: 650,
     left: 750,
+    shadowColor: "voilet",
   },
   {
     id: 7,
@@ -54,6 +61,7 @@ export const features = [
     icon: "Group 12.svg",
     top: 580,
     left: 970,
+    shadowColor: "voilet",
   },
   {
     id: 8,
@@ -61,6 +69,7 @@ export const features = [
     icon: "Group 13.svg",
     top: 440,
     left: 1150,
+    shadowColor: "voilet",
   },
   {
     id: 6,
@@ -68,6 +77,7 @@ export const features = [
     icon: "Group 9.svg",
     top: 100,
     left: 1150,
+    shadowColor: "voilet",
   },
 
   // {
@@ -76,6 +86,7 @@ export const features = [
   //   icon: "Group 14.svg",
   //   top: 400,
   //   left: 1150,
+  // shadowColor:'voilet'
   // },
 
   {
@@ -84,5 +95,6 @@ export const features = [
     icon: "Group 2.svg",
     top: 300,
     left: 1020,
+    shadowColor: "voilet",
   },
 ];

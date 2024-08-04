@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import GlobeIcon from "./icons/GlobeIcon";
 import { features } from "./utils/features_data";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { Tooltip } from "./ui/Tooltip";
 
 export default function Page() {
   return (
@@ -98,8 +99,10 @@ const Header = () => (
 
 const InteractiveElement = () => {
   const [animate, setAnimate] = useState(false);
+  const [winReady, setwinReady] = useState(false);
 
   useEffect(() => {
+    setwinReady(true);
     setTimeout(() => {
       setAnimate(true);
     }, 1000);
@@ -108,7 +111,7 @@ const InteractiveElement = () => {
   const onDragEnd = (result: any) => {
     console.log(result);
   };
-
+  if (!winReady) return;
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="tasks">
@@ -148,26 +151,60 @@ const InteractiveElement = () => {
                       draggableId={it.id.toString()}
                       index={index}
                     >
-                      {(provided) => (
-                        <div
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          ref={provided.innerRef}
+                      {(provided, snapshot) => (
+                        <button
+                          key={it.id}
+                          className={`absolute duration-500 z-[10] ${
+                            animate ? "" : "-translate-x-28"
+                          }`}
+                          style={{
+                            left: animate ? `${it.left}px` : "50%",
+                            top: animate ? `${it.top}px` : "83%",
+                            opacity: animate ? "100%" : "0%",
+                          }}
                         >
-                          <button
-                            key={it.id}
-                            className={`absolute duration-500 z-[10] ${
-                              animate ? "" : "-translate-x-28"
-                            }`}
-                            style={{
-                              left: animate ? `${it.left}px` : "50%",
-                              top: animate ? `${it.top}px` : "83%",
-                              opacity: animate ? "100%" : "0%",
-                            }}
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            // style={{
+                            //   ...provided.draggableProps.style,
+                            //   boxShadow: snapshot.isDragging
+                            //     ? `0px 2px 12px red`
+                            //     : "none",
+                            // }}
                           >
-                            <img src={`/icons/${it.icon}`} alt="svg icon" />
-                          </button>
-                        </div>
+                            <div>
+                              <button className="border border-red-400 bg-red-100 rounded-full text-xs px-1.5 py-0.5">
+                                Drag me{" "}
+                              </button>
+                              <img
+                                src={`/icons/${it.icon}`}
+                                alt="svg icon"
+                                style={{
+                                  filter: snapshot.isDragging
+                                    ? `drop-shadow(0px 5px 10px  lightblue)`
+                                    : "none",
+                                }}
+                              />
+                              {(snapshot.draggingOver ||
+                                snapshot.isDragging ||
+                                snapshot.isDropAnimating) && (
+                                <div
+                                  className="w-36 absolute top-0 left-full
+                               h-full bg-transparent border-red-400 border-dotted border rounded-xl p-2 z-50"
+                                >
+                                  <div className="w-full h-full bg-gray-50 p-1 rounded-xl text-start font-bold">
+                                    <span className="text-xs ">
+                                      AI Photo Studio
+                                    </span>
+                                    <div className="h-16 w-full rounded-md bg-white shadow-[0px_0px_6px_lightgray]"></div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </button>
                       )}
                     </Draggable>
                   );
