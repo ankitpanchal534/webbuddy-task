@@ -127,7 +127,7 @@ const InteractiveElement = () => {
           return (
             <button
               key={it.id}
-              className={`absolute`} // style={{
+              className={`absolute duration-500`} // style={{
               //   top: it.top,
               // }}
               // className={`absolute top-[0px] left-[${it.left}px]  `}
@@ -135,7 +135,7 @@ const InteractiveElement = () => {
                 left: `${(index + 1) * 120}px`,
                 top: animate
                   ? `${(index < 5 ? index + 1 : 5 - index + 1) * 120}px`
-                  : 0,
+                  : "100%",
               }}
             >
               {it.top}
