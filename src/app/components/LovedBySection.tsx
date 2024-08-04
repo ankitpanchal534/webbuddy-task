@@ -1,20 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 export const LovedBySection = () => {
   return (
     <section className=" py-20  z-[1]">
-      <div className="container mx-auto px-4 text-center">
+      <div className=" mx-auto  text-center">
         <h2 className="text-[16px] text-[#171618] font-medium">
           Loved by product folks at
         </h2>
-        <div className="flex justify-center space-x-8 mt-8 flex-wrap">
-          <span>Capsule</span>
-          <span>Loyers</span>
-          <span>Sisyphus</span>
-          <span>Sphende</span>
-          <span>Luminous</span>
-          <span>FocalPoint</span>
-          <span>Polymath</span>
-          <span>Epicurious</span>
-          <span>Aome Corp</span>
+        <div className="flex justify-center space-x-3 mt-8 flex-wrap">
+          {new Array(8).fill("-").map((im, id) => (
+            <div
+              key={id}
+              className="w-36 border-2 flex items-center rounded-2xl p-6 py-7 "
+            >
+              <img
+                src={`/company-logos/1 (${id + 1}).svg`}
+                alt="fictional company logo"
+                className="w-full h-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
